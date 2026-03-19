@@ -1,104 +1,104 @@
 ---
 name: mickinsy-slides
-description: 生成精美、动画丰富的 HTML 幻灯片演示文稿。采用 Mickinsey 设计风格，支持从零创建或转换 PowerPoint，无需 CSS/JavaScript 知识。
+description: Generate beautiful, animation-rich HTML slide presentations. Features Mickinsey design style, supports creating from scratch or converting PowerPoint, no CSS/JavaScript knowledge required.
 author: crystalsssup
 version: 1.0.0
 ---
 
 # Mickinsey Style Slides
 
-帮助非设计师创建精美的网页幻灯片演示，采用独特的 Mickinsey 视觉风格。
+Help non-designers create beautiful web slide presentations with the unique Mickinsey visual style.
 
-## 设计理念
+## Design Philosophy
 
-**"Show, Don't Tell"** —— 不用描述你的审美偏好，直接生成视觉预览供你选择。
+**"Show, Don't Tell"** — Instead of describing your aesthetic preferences, generate visual previews for you to choose from.
 
-Mickinsey 风格特点：
-- **极简优雅** —— 留白与内容的完美平衡
-- **动态叙事** —— 流畅的页面过渡动画
-- **专业商务** —— 适合商业路演、产品发布
-- **零依赖** —— 单个 HTML 文件，无需构建工具
+Mickinsey style characteristics:
+- **Minimalist Elegance** — Perfect balance of whitespace and content
+- **Dynamic Storytelling** — Smooth page transition animations
+- **Professional Business** — Suitable for business pitches and product launches
+- **Zero Dependencies** — Single HTML file, no build tools needed
 
-## 功能特性
+## Features
 
-- **视觉风格探索** —— 生成 3 种风格预览，选择你喜欢的设计
-- **PPT 转换** —— 将 PowerPoint 转换为网页幻灯片，保留所有图片和内容
-- **响应式设计** —— 自适应不同屏幕尺寸
-- **交互动画** —— 内置丰富的页面切换和元素动画
-- **一键导出** —— 单文件 HTML，直接浏览器打开
+- **Visual Style Exploration** — Generate 3 style previews, choose the design you like
+- **PPT Conversion** — Convert PowerPoint to web slides, preserving all images and content
+- **Responsive Design** — Adapts to different screen sizes
+- **Interactive Animations** — Built-in rich page transitions and element animations
+- **One-Click Export** — Single HTML file, open directly in browser
 
-## 使用示例
+## Usage Examples
 
-### 创建新演示文稿
-
-```
-/mickinsy-slides
-
-> "我想为我的创业项目创建一个路演 PPT"
-```
-
-Skill 会：
-1. 询问你的内容（页数、文案、图片）
-2. 了解你想传达的感觉（专业？活泼？高端？）
-3. 生成 3 种 Mickinsey 风格预览供你选择
-4. 创建完整的 HTML 演示文稿
-5. 自动在浏览器中打开
-
-### 转换 PowerPoint
+### Create New Presentation
 
 ```
 /mickinsy-slides
 
-> "把我的 presentation.pptx 转换成网页幻灯片"
+> "I want to create a pitch deck for my startup"
 ```
 
-Skill 会：
-1. 提取 PPT 中的所有文字、图片和备注
-2. 展示提取的内容供你确认
-3. 让你选择 Mickinsey 风格变体
-4. 生成包含原始素材的 HTML 演示文稿
+The Skill will:
+1. Ask about your content (number of slides, copy, images)
+2. Understand the feeling you want to convey (professional? lively? premium?)
+3. Generate 3 Mickinsey style previews for you to choose from
+4. Create the complete HTML presentation
+5. Open automatically in your browser
 
-## 内置风格
+### Convert PowerPoint
 
-### Mickinsey 经典系列
+```
+/mickinsy-slides
 
-- **Mickinsey Pure** —— 纯白底色，深蓝点缀，极简商务
-- **Mickinsey Dark** —— 深色背景，金色强调，高端大气
-- **Mickinsey Warm** —— 暖色调，亲和力强，适合教育/培训
+> "Convert my presentation.pptx into web slides"
+```
 
-### 动态效果
+The Skill will:
+1. Extract all text, images, and notes from your PPT
+2. Show you the extracted content for confirmation
+3. Let you choose a Mickinsey style variant
+4. Generate an HTML presentation with your original assets
 
-- **淡入滑动** —— 优雅的页面切换
-- **元素飞入** —— 内容逐项呈现
-- **背景视差** —— 深度感滚动效果
-- **数据动画** —— 图表数字动态增长
+## Built-in Styles
 
-## 工作流程
+### Mickinsey Classic Series
 
-1. **需求收集** —— 了解内容、受众、场合
-2. **风格选择** —— 生成预览，让用户挑选
-3. **结构设计** —— 规划页面布局和内容层级
-4. **视觉生成** —— 创建完整的 HTML 幻灯片
-5. **交付优化** —— 添加演讲者备注，优化性能
+- **Mickinsey Pure** — Pure white base, deep blue accents, minimalist business style
+- **Mickinsey Dark** — Dark background, gold highlights, premium and elegant
+- **Mickinsey Warm** — Warm tones, approachable, suitable for education/training
 
-## 输出规范
+### Animation Effects
 
-- 单文件 HTML，内联所有 CSS/JavaScript
-- 兼容 Chrome、Safari、Firefox、Edge
-- 支持键盘导航（方向键、空格）
-- 代码包含详细中文注释
-- 可选：导出为 PDF（浏览器打印）
+- **Fade & Slide** — Elegant page transitions
+- **Element Fly-in** — Content appears item by item
+- **Background Parallax** — Depth scrolling effects
+- **Data Animation** — Chart numbers animate dynamically
 
-## 文件结构
+## Workflow
+
+1. **Requirement Collection** — Understand content, audience, and occasion
+2. **Style Selection** — Generate previews for user to choose from
+3. **Structure Design** — Plan page layouts and content hierarchy
+4. **Visual Generation** — Create complete HTML slides
+5. **Delivery Optimization** — Add speaker notes, optimize performance
+
+## Output Specifications
+
+- Single HTML file with inline CSS/JavaScript
+- Compatible with Chrome, Safari, Firefox, Edge
+- Supports keyboard navigation (arrow keys, space)
+- Code includes detailed English comments
+- Optional: Export as PDF (browser print)
+
+## File Structure
 
 ```
 output/
-└── presentation.html     # 完整幻灯片文件
+└── presentation.html     # Complete slide file
 ```
 
-## 技术特点
+## Technical Features
 
-- **无框架依赖** —— 原生 HTML/CSS/JS，永久可用
-- **模块化 CSS** —— 易于自定义修改
-- **性能优化** —— 图片懒加载，动画硬件加速
-- **无障碍支持** —— 键盘导航，屏幕阅读器友好
+- **No Framework Dependencies** — Native HTML/CSS/JS, works forever
+- **Modular CSS** — Easy to customize and modify
+- **Performance Optimized** — Lazy loading images, hardware-accelerated animations
+- **Accessibility Support** — Keyboard navigation, screen reader friendly

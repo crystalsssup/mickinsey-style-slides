@@ -1,106 +1,106 @@
 # Mickinsey Style Presets
 
-Mickinsey 风格的视觉预设，用于生成统一美观的幻灯片。
+Visual presets for the Mickinsey style, used to generate consistent and beautiful slides.
 
 ---
 
 ## Mickinsey Pure
 
-**适用场景：** 商务汇报、产品发布、企业介绍
+**Use Cases:** Business reports, product launches, corporate introductions
 
-### 配色方案
+### Color Scheme
 
 ```css
---primary: #0A2540;        /* 深海蓝 */
---secondary: #00D4AA;      /* 薄荷绿 */
---background: #FFFFFF;     /* 纯白 */
---text-primary: #1A1A2E;   /* 深黑 */
---text-secondary: #6B7280; /* 灰色 */
---accent: #635BFF;         /* 紫色点缀 */
+--primary: #0A2540;        /* Deep Sea Blue */
+--secondary: #00D4AA;      /* Mint Green */
+--background: #FFFFFF;     /* Pure White */
+--text-primary: #1A1A2E;   /* Deep Black */
+--text-secondary: #6B7280; /* Gray */
+--accent: #635BFF;         /* Purple Accent */
 ```
 
-### 字体搭配
+### Font Pairing
 
-- **标题：** "Noto Sans SC", "PingFang SC", sans-serif
-- **正文：** "Noto Sans SC", "Microsoft YaHei", sans-serif
-- **数据：** "DIN Alternate", "Roboto Mono", monospace
+- **Headings:** "Noto Sans SC", "PingFang SC", sans-serif
+- **Body:** "Noto Sans SC", "Microsoft YaHei", sans-serif
+- **Data:** "DIN Alternate", "Roboto Mono", monospace
 
-### 布局特征
+### Layout Characteristics
 
-- 大量留白（padding: 60px-120px）
-- 左侧标题，右侧内容
-- 圆形数据展示
-- 细线分隔
+- Generous whitespace (padding: 60px-120px)
+- Left-aligned titles, right-aligned content
+- Circular data displays
+- Thin line separators
 
 ---
 
 ## Mickinsey Dark
 
-**适用场景：** 科技发布、创意提案、高端路演
+**Use Cases:** Tech launches, creative proposals, premium roadshows
 
-### 配色方案
+### Color Scheme
 
 ```css
---primary: #FFD700;        /* 金色 */
---secondary: #00CED1;      /* 深青 */
---background: #0D1117;     /* 深黑 */
---surface: #161B22;        /* 卡片背景 */
---text-primary: #E6EDF3;   /* 亮白 */
---text-secondary: #8B949E; /* 灰白 */
+--primary: #FFD700;        /* Gold */
+--secondary: #00CED1;      /* Deep Cyan */
+--background: #0D1117;     /* Deep Black */
+--surface: #161B22;        /* Card Background */
+--text-primary: #E6EDF3;   /* Bright White */
+--text-secondary: #8B949E; /* Grayish White */
 ```
 
-### 字体搭配
+### Font Pairing
 
-- **标题：** "Noto Sans SC", "Source Han Sans", sans-serif
-- **正文：** "Noto Sans SC", sans-serif
-- **强调：** "Playfair Display", serif（英文装饰）
+- **Headings:** "Noto Sans SC", "Source Han Sans", sans-serif
+- **Body:** "Noto Sans SC", sans-serif
+- **Accent:** "Playfair Display", serif (English decorative)
 
-### 布局特征
+### Layout Characteristics
 
-- 深色沉浸式背景
-- 渐变光效装饰
-- 卡片式内容组织
-- 霓虹色强调元素
+- Dark immersive background
+- Gradient light effect decorations
+- Card-based content organization
+- Neon color accent elements
 
 ---
 
 ## Mickinsey Warm
 
-**适用场景：** 教育培训、团队分享、非正式演讲
+**Use Cases:** Education & training, team sharing, informal presentations
 
-### 配色方案
+### Color Scheme
 
 ```css
---primary: #FF6B6B;        /* 珊瑚红 */
---secondary: #FFE66D;      /* 暖黄 */
---background: #FFFDF8;     /* 米白 */
---surface: #FFFFFF;        /* 纯白卡片 */
---text-primary: #2D3436;   /* 深灰 */
---text-secondary: #636E72; /* 中灰 */
---accent: #A29BFE;         /* 淡紫 */
+--primary: #FF6B6B;        /* Coral Red */
+--secondary: #FFE66D;      /* Warm Yellow */
+--background: #FFFDF8;     /* Off White */
+--surface: #FFFFFF;        /* Pure White Card */
+--text-primary: #2D3436;   /* Dark Gray */
+--text-secondary: #636E72; /* Medium Gray */
+--accent: #A29BFE;         /* Light Purple */
 ```
 
-### 字体搭配
+### Font Pairing
 
-- **标题：** "Noto Sans SC", "ZCOOL XiaoWei", serif
-- **正文：** "Noto Sans SC", "Microsoft YaHei", sans-serif
-- **手写体：** 用于引用和装饰
+- **Headings:** "Noto Sans SC", "ZCOOL XiaoWei", serif
+- **Body:** "Noto Sans SC", "Microsoft YaHei", sans-serif
+- **Handwriting:** Used for quotes and decorations
 
-### 布局特征
+### Layout Characteristics
 
-- 圆角元素（border-radius: 16px-24px）
-- 柔和阴影
-- 图标点缀
-- 图文并茂
+- Rounded elements (border-radius: 16px-24px)
+- Soft shadows
+- Icon accents
+- Rich graphics and text
 
 ---
 
-## 动画模式
+## Animation Patterns
 
-### 页面过渡
+### Page Transitions
 
 ```css
-/* 淡入 + 上滑 */
+/* Fade + Slide Up */
 @keyframes slideInUp {
   from {
     opacity: 0;
@@ -112,14 +112,14 @@ Mickinsey 风格的视觉预设，用于生成统一美观的幻灯片。
   }
 }
 
-/* 持续时间：600ms */
-/* 缓动函数：cubic-bezier(0.4, 0, 0.2, 1) */
+/* Duration: 600ms */
+/* Easing: cubic-bezier(0.4, 0, 0.2, 1) */
 ```
 
-### 元素动画
+### Element Animations
 
 ```css
-/* 依次飞入 */
+/* Staggered Fly-in */
 .stagger-item {
   animation: fadeInUp 0.5s ease backwards;
 }
@@ -128,16 +128,16 @@ Mickinsey 风格的视觉预设，用于生成统一美观的幻灯片。
 .stagger-item:nth-child(3) { animation-delay: 0.3s; }
 ```
 
-### 强调动画
+### Accent Animations
 
 ```css
-/* 数据增长 */
+/* Data Count Up */
 @keyframes countUp {
   from { opacity: 0; transform: scale(0.5); }
   to { opacity: 1; transform: scale(1); }
 }
 
-/* 脉冲高亮 */
+/* Pulse Highlight */
 @keyframes pulse {
   0%, 100% { box-shadow: 0 0 0 0 rgba(99, 91, 255, 0.4); }
   50% { box-shadow: 0 0 20px 10px rgba(99, 91, 255, 0); }
@@ -146,60 +146,60 @@ Mickinsey 风格的视觉预设，用于生成统一美观的幻灯片。
 
 ---
 
-## 组件规范
+## Component Specifications
 
-### 标题页
+### Title Slide
 
 ```
 ┌─────────────────────────────┐
 │                             │
 │                             │
-│     [主标题]                │
+│     [Main Title]            │
 │     H1 - 48-72px            │
 │                             │
-│     [副标题]                │
+│     [Subtitle]              │
 │     H2 - 24-32px            │
 │                             │
-│              [演讲者信息]   │
+│              [Speaker Info] │
 │                             │
 └─────────────────────────────┘
 ```
 
-### 内容页
+### Content Slide
 
 ```
 ┌─────────────────────────────┐
-│  [页面标题]                 │
+│  [Page Title]               │
 │  H2 - 36px                  │
 ├─────────────────────────────┤
 │                             │
 │  ┌────────┐  ┌────────┐    │
-│  │ 要点 1 │  │ 要点 2 │    │
+│  │ Point 1│  │ Point 2│    │
 │  └────────┘  └────────┘    │
 │                             │
 │  ┌────────────────────┐    │
-│  │    详细说明        │    │
+│  │    Description     │    │
 │  └────────────────────┘    │
 │                             │
 └─────────────────────────────┘
 ```
 
-### 数据展示页
+### Data Slide
 
 ```
 ┌─────────────────────────────┐
-│  [数据标题]                 │
+│  [Data Title]               │
 ├─────────────────────────────┤
 │                             │
 │     ┌───┐                   │
-│     │   │   指标 1          │
+│     │   │   Metric 1        │
 │     │   │   98%             │
 │     └───┘                   │
 │                             │
 │  ┌───┐ ┌───┐ ┌───┐         │
 │  │   │ │   │ │   │         │
 │  └───┘ └───┘ └───┘         │
-│   指标2  指标3  指标4       │
+│   M2   M3   M4             │
 │                             │
 └─────────────────────────────┘
 ```

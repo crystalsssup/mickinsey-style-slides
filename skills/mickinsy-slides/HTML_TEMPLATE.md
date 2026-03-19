@@ -1,28 +1,28 @@
-# HTML 模板结构
+# HTML Template Structure
 
-Mickinsey 幻灯片的 HTML 模板规范。
+HTML template specifications for Mickinsey slides.
 
 ---
 
-## 基础结构
+## Basic Structure
 
 ```html
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ presentation_title }}</title>
   <style>
-    /* CSS 样式 */
+    /* CSS Styles */
   </style>
 </head>
 <body>
   <div class="presentation">
-    <!-- 幻灯片页面 -->
+    <!-- Slide Pages -->
   </div>
   <script>
-    /* JavaScript 交互 */
+    /* JavaScript Interactions */
   </script>
 </body>
 </html>
@@ -30,10 +30,10 @@ Mickinsey 幻灯片的 HTML 模板规范。
 
 ---
 
-## CSS 基础样式
+## CSS Base Styles
 
 ```css
-/* ===== 重置与基础 ===== */
+/* ===== Reset & Base ===== */
 * {
   margin: 0;
   padding: 0;
@@ -47,14 +47,14 @@ html, body {
   font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
-/* ===== 幻灯片容器 ===== */
+/* ===== Presentation Container ===== */
 .presentation {
   width: 100%;
   height: 100%;
   position: relative;
 }
 
-/* ===== 单页幻灯片 ===== */
+/* ===== Single Slide ===== */
 .slide {
   width: 100%;
   height: 100%;
@@ -72,7 +72,7 @@ html, body {
   animation: slideIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ===== 动画定义 ===== */
+/* ===== Animation Definitions ===== */
 @keyframes slideIn {
   from {
     opacity: 0;
@@ -95,7 +95,7 @@ html, body {
   }
 }
 
-/* ===== 内容组件 ===== */
+/* ===== Content Components ===== */
 .slide-title {
   font-size: 48px;
   font-weight: 700;
@@ -123,7 +123,7 @@ html, body {
   backdrop-filter: blur(10px);
 }
 
-/* ===== 导航控制 ===== */
+/* ===== Navigation Controls ===== */
 .nav-hint {
   position: fixed;
   bottom: 20px;
@@ -142,7 +142,7 @@ html, body {
   z-index: 1000;
 }
 
-/* ===== 打印/PDF 导出 ===== */
+/* ===== Print/PDF Export ===== */
 @media print {
   .slide {
     display: flex !important;
@@ -159,25 +159,25 @@ html, body {
 
 ---
 
-## JavaScript 交互
+## JavaScript Interactions
 
 ```javascript
 (function() {
   'use strict';
   
-  // ===== 配置 =====
+  // ===== Configuration =====
   const config = {
     animationDuration: 600,
     autoPlay: false,
     autoPlayInterval: 5000
   };
   
-  // ===== 获取元素 =====
+  // ===== Get Elements =====
   const slides = document.querySelectorAll('.slide');
   const totalSlides = slides.length;
   let currentSlide = 0;
   
-  // ===== 导航函数 =====
+  // ===== Navigation Functions =====
   function goToSlide(index) {
     if (index < 0 || index >= totalSlides) return;
     
@@ -202,7 +202,7 @@ html, body {
     }
   }
   
-  // ===== 键盘控制 =====
+  // ===== Keyboard Controls =====
   document.addEventListener('keydown', (e) => {
     switch(e.key) {
       case 'ArrowRight':
@@ -227,7 +227,7 @@ html, body {
     }
   });
   
-  // ===== 触摸滑动支持 =====
+  // ===== Touch Swipe Support =====
   let touchStartY = 0;
   let touchEndY = 0;
   
@@ -253,18 +253,18 @@ html, body {
     }
   }
   
-  // ===== 初始化 =====
+  // ===== Initialization =====
   function init() {
-    // 显示第一页
+    // Show first slide
     if (slides.length > 0) {
       slides[0].classList.add('active');
       updatePageNumber();
     }
     
-    // 添加导航提示
+    // Add navigation hint
     const hint = document.createElement('div');
     hint.className = 'nav-hint';
-    hint.textContent = '← → 或空格键切换';
+    hint.textContent = '← → or Space to navigate';
     document.body.appendChild(hint);
     
     const pageIndicator = document.createElement('div');
@@ -273,7 +273,7 @@ html, body {
     updatePageNumber();
   }
   
-  // 启动
+  // Start
   init();
   
 })();
@@ -281,9 +281,9 @@ html, body {
 
 ---
 
-## 页面模板示例
+## Page Template Examples
 
-### 封面页
+### Cover Slide
 
 ```html
 <div class="slide cover">
@@ -299,7 +299,7 @@ html, body {
 </div>
 ```
 
-### 内容页
+### Content Slide
 
 ```html
 <div class="slide content">
@@ -309,12 +309,12 @@ html, body {
       <h3>{{ item_title }}</h3>
       <p>{{ item_content }}</p>
     </div>
-    <!-- 更多卡片... -->
+    <!-- More cards... -->
   </div>
 </div>
 ```
 
-### 数据页
+### Data Slide
 
 ```html
 <div class="slide data">
@@ -324,7 +324,7 @@ html, body {
       <span class="data-number">{{ number }}</span>
       <span class="data-label">{{ label }}</span>
     </div>
-    <!-- 更多数据... -->
+    <!-- More data... -->
   </div>
 </div>
 ```

@@ -1,0 +1,30 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+.temp/
+
+# Claude Code
+.claude/
+
+# Output (用户生成的幻灯片)
+output/
+dist/
+*.html
+!skills/**/example.html
+
+# Node (万一以后需要)
+node_modules/
+package-lock.json
+yarn.lock

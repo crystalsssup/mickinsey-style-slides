@@ -28,3 +28,6 @@ dist/
 node_modules/
 package-lock.json
 yarn.lock
+
+# Personal memory file (local only)
+MEMORY.md

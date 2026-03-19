@@ -1,4 +1,4 @@
-# Mickinsy Style Slides
+# Mickinsey Style Slides
 
 一个用于 Claude Code 的 Skill，帮助你创建精美、动画丰富的 HTML 幻灯片演示文稿。
 
@@ -15,7 +15,7 @@
 - **📊 PPT 转换** —— 将现有 PowerPoint 转换为网页幻灯片，保留所有图片和内容
 - **🚀 零依赖** —— 单个 HTML 文件，内联所有 CSS/JS，无需 npm、构建工具或框架
 - **📱 响应式设计** —— 自适应各种屏幕尺寸
-- **🎯 Mickinsy 风格** —— 独特的极简优雅设计，专业商务风格
+- **🎯 Mickinsey 风格** —— 独特的极简优雅设计，专业商务风格
 
 ---
 
@@ -65,7 +65,7 @@ curl -o ~/.claude/skills/mickinsy-slides/SKILL.md \
 Skill 会：
 1. 询问你的内容（页数、文案、图片）
 2. 了解你想传达的感觉（专业？活泼？高端？）
-3. 生成 3 种 Mickinsy 风格预览供你选择
+3. 生成 3 种 Mickinsey 风格预览供你选择
 4. 创建完整的 HTML 演示文稿
 5. 自动在浏览器中打开
 
@@ -80,22 +80,22 @@ Skill 会：
 Skill 会：
 1. 提取 PPT 中的所有文字、图片和备注
 2. 展示提取的内容供你确认
-3. 让你选择 Mickinsy 风格变体
+3. 让你选择 Mickinsey 风格变体
 4. 生成包含原始素材的 HTML 演示文稿
 
 ---
 
 ## 🎨 内置风格
 
-### Mickinsy Pure（纯白商务）
+### Mickinsey Pure（纯白商务）
 - 纯白底色，深海蓝点缀
 - 适合：商务汇报、产品发布、企业介绍
 
-### Mickinsy Dark（深色高端）
+### Mickinsey Dark（深色高端）
 - 深色背景，金色强调
 - 适合：科技发布、高端路演、创意提案
 
-### Mickinsy Warm（暖色亲和）
+### Mickinsey Warm（暖色亲和）
 - 暖色调，圆角设计
 - 适合：教育培训、团队分享、非正式演讲
 

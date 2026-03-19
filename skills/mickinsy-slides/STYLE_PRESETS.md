@@ -1,10 +1,10 @@
-# Mickinsy Style Presets
+# Mickinsey Style Presets
 
-Mickinsy 风格的视觉预设，用于生成统一美观的幻灯片。
+Mickinsey 风格的视觉预设，用于生成统一美观的幻灯片。
 
 ---
 
-## Mickinsy Pure
+## Mickinsey Pure
 
 **适用场景：** 商务汇报、产品发布、企业介绍
 
@@ -34,7 +34,7 @@ Mickinsy 风格的视觉预设，用于生成统一美观的幻灯片。
 
 ---
 
-## Mickinsy Dark
+## Mickinsey Dark
 
 **适用场景：** 科技发布、创意提案、高端路演
 
@@ -64,7 +64,7 @@ Mickinsy 风格的视觉预设，用于生成统一美观的幻灯片。
 
 ---
 
-## Mickinsy Warm
+## Mickinsey Warm
 
 **适用场景：** 教育培训、团队分享、非正式演讲
 

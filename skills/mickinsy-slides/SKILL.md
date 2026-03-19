@@ -1,19 +1,19 @@
 ---
 name: mickinsy-slides
-description: 生成精美、动画丰富的 HTML 幻灯片演示文稿。采用 Mickinsy 设计风格，支持从零创建或转换 PowerPoint，无需 CSS/JavaScript 知识。
+description: 生成精美、动画丰富的 HTML 幻灯片演示文稿。采用 Mickinsey 设计风格，支持从零创建或转换 PowerPoint，无需 CSS/JavaScript 知识。
 author: crystalsssup
 version: 1.0.0
 ---
 
-# Mickinsy Style Slides
+# Mickinsey Style Slides
 
-帮助非设计师创建精美的网页幻灯片演示，采用独特的 Mickinsy 视觉风格。
+帮助非设计师创建精美的网页幻灯片演示，采用独特的 Mickinsey 视觉风格。
 
 ## 设计理念
 
 **"Show, Don't Tell"** —— 不用描述你的审美偏好，直接生成视觉预览供你选择。
 
-Mickinsy 风格特点：
+Mickinsey 风格特点：
 - **极简优雅** —— 留白与内容的完美平衡
 - **动态叙事** —— 流畅的页面过渡动画
 - **专业商务** —— 适合商业路演、产品发布
@@ -40,7 +40,7 @@ Mickinsy 风格特点：
 Skill 会：
 1. 询问你的内容（页数、文案、图片）
 2. 了解你想传达的感觉（专业？活泼？高端？）
-3. 生成 3 种 Mickinsy 风格预览供你选择
+3. 生成 3 种 Mickinsey 风格预览供你选择
 4. 创建完整的 HTML 演示文稿
 5. 自动在浏览器中打开
 
@@ -55,16 +55,16 @@ Skill 会：
 Skill 会：
 1. 提取 PPT 中的所有文字、图片和备注
 2. 展示提取的内容供你确认
-3. 让你选择 Mickinsy 风格变体
+3. 让你选择 Mickinsey 风格变体
 4. 生成包含原始素材的 HTML 演示文稿
 
 ## 内置风格
 
-### Mickinsy 经典系列
+### Mickinsey 经典系列
 
-- **Mickinsy Pure** —— 纯白底色，深蓝点缀，极简商务
-- **Mickinsy Dark** —— 深色背景，金色强调，高端大气
-- **Mickinsy Warm** —— 暖色调，亲和力强，适合教育/培训
+- **Mickinsey Pure** —— 纯白底色，深蓝点缀，极简商务
+- **Mickinsey Dark** —— 深色背景，金色强调，高端大气
+- **Mickinsey Warm** —— 暖色调，亲和力强，适合教育/培训
 
 ### 动态效果
 

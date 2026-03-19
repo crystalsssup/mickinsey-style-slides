@@ -1,6 +1,6 @@
 # HTML 模板结构
 
-Mickinsy 幻灯片的 HTML 模板规范。
+Mickinsey 幻灯片的 HTML 模板规范。
 
 ---
 

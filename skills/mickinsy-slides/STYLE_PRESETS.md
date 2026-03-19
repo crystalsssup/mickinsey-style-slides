@@ -1,205 +1,279 @@
-# Mickinsey Style Presets
+# Visual Direction Presets
 
-Visual presets for the Mickinsey style, used to generate consistent and beautiful slides.
+Three distinct design systems for the user to choose from.
 
 ---
 
-## Mickinsey Pure
+## Option A: Editorial Bold
 
-**Use Cases:** Business reports, product launches, corporate introductions
+**Vibe:** Magazine covers, high fashion, Wired/T magazine
 
-### Color Scheme
+### Palette
 
 ```css
---primary: #0A2540;        /* Deep Sea Blue */
---secondary: #00D4AA;      /* Mint Green */
---background: #FFFFFF;     /* Pure White */
---text-primary: #1A1A2E;   /* Deep Black */
---text-secondary: #6B7280; /* Gray */
---accent: #635BFF;         /* Purple Accent */
+:root {
+  --bg: #0a0a0a;
+  --surface: #141414;
+  --text-primary: #ffffff;
+  --text-secondary: #888888;
+  --accent: #ff3366;  /* Hot pink/red */
+  --accent-2: #00d4aa; /* Mint contrast */
+}
 ```
 
-### Font Pairing
+### Typography
 
-- **Headings:** "Noto Sans SC", "PingFang SC", sans-serif
-- **Body:** "Noto Sans SC", "Microsoft YaHei", sans-serif
-- **Data:** "DIN Alternate", "Roboto Mono", monospace
+- **Headlines:** System sans, 800 weight, tight tracking (-0.02em)
+- **Body:** Same family, 400 weight, generous line-height (1.6)
+- **Scale:** Headline can be 15% of viewport height
 
-### Layout Characteristics
+### Layout DNA
 
-- Generous whitespace (padding: 60px-120px)
-- Left-aligned titles, right-aligned content
-- Circular data displays
-- Thin line separators
+- Asymmetric grids (60/40, 70/30 splits)
+- Full-bleed images with gradient overlays
+- Oversized punctuation and numbers
+- Generous negative space
+
+### Signature Moves
+
+- Text that bleeds off edges
+- Diagonal section dividers
+- Mixing serif (quotes) with sans-serif (body)
+- High contrast photography
 
 ---
 
-## Mickinsey Dark
+## Option B: Tech Modern
 
-**Use Cases:** Tech launches, creative proposals, premium roadshows
+**Vibe:** Linear, Stripe, Vercel — dark mode premium SaaS
 
-### Color Scheme
+### Palette
 
 ```css
---primary: #FFD700;        /* Gold */
---secondary: #00CED1;      /* Deep Cyan */
---background: #0D1117;     /* Deep Black */
---surface: #161B22;        /* Card Background */
---text-primary: #E6EDF3;   /* Bright White */
---text-secondary: #8B949E; /* Grayish White */
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --surface-elevated: #21262d;
+  --text-primary: #e6edf3;
+  --text-secondary: #7d8590;
+  --accent: #58a6ff;      /* Electric blue */
+  --accent-glow: rgba(88, 166, 255, 0.3);
+}
 ```
 
-### Font Pairing
+### Typography
 
-- **Headings:** "Noto Sans SC", "Source Han Sans", sans-serif
-- **Body:** "Noto Sans SC", sans-serif
-- **Accent:** "Playfair Display", serif (English decorative)
+- **Headlines:** Geometric sans, 600-700 weight
+- **Code/Numbers:** Monospace for data credibility
+- **Scale:** Measured, harmonious ratios
 
-### Layout Characteristics
+### Layout DNA
 
-- Dark immersive background
-- Gradient light effect decorations
-- Card-based content organization
-- Neon color accent elements
+- Card-based organization
+- Subtle borders (1px, low opacity)
+- Glassmorphism (backdrop-blur)
+- Gradients for depth
+
+### Signature Moves
+
+- Glowing accents on hover/focus
+- Subtle grid backgrounds
+- Code snippets as visual elements
+- Data visualization styling
 
 ---
 
-## Mickinsey Warm
+## Option C: Organic Warm
 
-**Use Cases:** Education & training, team sharing, informal presentations
+**Vibe:** Headspace, Notion, friendly consumer apps
 
-### Color Scheme
+### Palette
 
 ```css
---primary: #FF6B6B;        /* Coral Red */
---secondary: #FFE66D;      /* Warm Yellow */
---background: #FFFDF8;     /* Off White */
---surface: #FFFFFF;        /* Pure White Card */
---text-primary: #2D3436;   /* Dark Gray */
---text-secondary: #636E72; /* Medium Gray */
---accent: #A29BFE;         /* Light Purple */
+:root {
+  --bg: #faf9f6;        /* Warm white */
+  --surface: #ffffff;
+  --text-primary: #2d3436;
+  --text-secondary: #636e72;
+  --accent: #ff7675;    /* Coral */
+  --accent-2: #74b9ff;  /* Soft blue */
+  --accent-3: #00b894;  /* Mint */
+}
 ```
 
-### Font Pairing
+### Typography
 
-- **Headings:** "Noto Sans SC", "ZCOOL XiaoWei", serif
-- **Body:** "Noto Sans SC", "Microsoft YaHei", sans-serif
-- **Handwriting:** Used for quotes and decorations
+- **Headlines:** Rounded or humanist sans, 700 weight
+- **Body:** Same family, 400 weight
+- **Scale:** Comfortable, approachable sizing
 
-### Layout Characteristics
+### Layout DNA
 
-- Rounded elements (border-radius: 16px-24px)
-- Soft shadows
-- Icon accents
-- Rich graphics and text
+- Rounded corners (12px-24px)
+- Soft shadows (large blur, low opacity)
+- Pastel gradient backgrounds
+- Centered, balanced compositions
+
+### Signature Moves
+
+- Blob shapes as decorative elements
+- Hand-drawn style icons
+- Soft focus photography
+- Playful micro-interactions
 
 ---
 
-## Animation Patterns
+## Motion Patterns
 
-### Page Transitions
+### Entrance Choreography
 
 ```css
-/* Fade + Slide Up */
-@keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
+/* 1. Background reveals first */
+@keyframes bgReveal {
+  from { clip-path: inset(100% 0 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+
+/* 2. Headline slides up */
+@keyframes headlineUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(40px); 
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
   }
 }
 
-/* Duration: 600ms */
-/* Easing: cubic-bezier(0.4, 0, 0.2, 1) */
-```
-
-### Element Animations
-
-```css
-/* Staggered Fly-in */
-.stagger-item {
-  animation: fadeInUp 0.5s ease backwards;
-}
-.stagger-item:nth-child(1) { animation-delay: 0.1s; }
-.stagger-item:nth-child(2) { animation-delay: 0.2s; }
-.stagger-item:nth-child(3) { animation-delay: 0.3s; }
-```
-
-### Accent Animations
-
-```css
-/* Data Count Up */
-@keyframes countUp {
-  from { opacity: 0; transform: scale(0.5); }
-  to { opacity: 1; transform: scale(1); }
+/* 3. Body content fades in */
+@keyframes bodyFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-/* Pulse Highlight */
-@keyframes pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(99, 91, 255, 0.4); }
-  50% { box-shadow: 0 0 20px 10px rgba(99, 91, 255, 0); }
+/* 4. Accent elements get attention */
+@keyframes accentPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+```
+
+### Scroll Behaviors
+
+```css
+/* Parallax layers */
+.parallax-slow { transform: translateY(calc(var(--scroll) * 0.3)); }
+.parallax-fast { transform: translateY(calc(var(--scroll) * -0.2)); }
+
+/* Pin and reveal */
+.pin-section {
+  position: sticky;
+  top: 0;
+}
+```
+
+### Micro-interactions
+
+```css
+/* Hover states */
+.interactive-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.interactive-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* Active states */
+.interactive-card:active {
+  transform: translateY(-2px);
 }
 ```
 
 ---
 
-## Component Specifications
+## Layout Patterns Library
 
-### Title Slide
+### Hero
+
+One big statement. Headline + subhead + optional CTA.
 
 ```
 ┌─────────────────────────────┐
 │                             │
 │                             │
-│     [Main Title]            │
-│     H1 - 48-72px            │
+│     MASSIVE HEADLINE        │
+│     that spans width        │
 │                             │
-│     [Subtitle]              │
-│     H2 - 24-32px            │
+│     Subtitle text here      │
 │                             │
-│              [Speaker Info] │
+│              [Optional CTA] │
 │                             │
 └─────────────────────────────┘
 ```
 
-### Content Slide
+### Three-Up
+
+Three cards, staggered reveal.
 
 ```
 ┌─────────────────────────────┐
-│  [Page Title]               │
-│  H2 - 36px                  │
+│  Title                      │
 ├─────────────────────────────┤
+│  ┌────┐  ┌────┐  ┌────┐    │
+│  │ 1  │  │ 2  │  │ 3  │    │
+│  │    │  │    │  │    │    │
+│  └────┘  └────┘  └────┘    │
+│   0.2s   0.4s   0.6s delay │
+└─────────────────────────────┘
+```
+
+### Split
+
+Side-by-side comparison or image + text.
+
+```
+┌─────────────────────────────┐
+│  ┌──────────┬──────────┐   │
+│  │          │          │   │
+│  │  IMAGE   │   TEXT   │   │
+│  │          │          │   │
+│  │          │          │   │
+│  └──────────┴──────────┘   │
+└─────────────────────────────┘
+```
+
+### Quote
+
+Centered, typographic focus.
+
+```
+┌─────────────────────────────┐
 │                             │
-│  ┌────────┐  ┌────────┐    │
-│  │ Point 1│  │ Point 2│    │
-│  └────────┘  └────────┘    │
 │                             │
-│  ┌────────────────────┐    │
-│  │    Description     │    │
-│  └────────────────────┘    │
+│     "The quote text         │
+│      goes here and          │
+│      can be long"           │
+│                             │
+│     — Attribution           │
 │                             │
 └─────────────────────────────┘
 ```
 
-### Data Slide
+### Data
+
+Big number with context.
 
 ```
 ┌─────────────────────────────┐
-│  [Data Title]               │
-├─────────────────────────────┤
 │                             │
-│     ┌───┐                   │
-│     │   │   Metric 1        │
-│     │   │   98%             │
-│     └───┘                   │
+│          847%               │
+│      growth rate            │
 │                             │
-│  ┌───┐ ┌───┐ ┌───┐         │
-│  │   │ │   │ │   │         │
-│  └───┘ └───┘ └───┘         │
-│   M2   M3   M4             │
+│   Contextual explanation    │
+│   goes here in smaller      │
+│   text below                │
 │                             │
 └─────────────────────────────┘
 ```

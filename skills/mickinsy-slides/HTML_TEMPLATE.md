@@ -1,10 +1,10 @@
-# HTML Template Structure
+# SlideCraft HTML Architecture
 
-HTML template specifications for Mickinsey slides.
+How the generated HTML is structured.
 
 ---
 
-## Basic Structure
+## Document Structure
 
 ```html
 <!DOCTYPE html>
@@ -13,16 +13,70 @@ HTML template specifications for Mickinsey slides.
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ presentation_title }}</title>
+  
+  <!-- Critical CSS inlined for speed -->
   <style>
-    /* CSS Styles */
+    /* Design tokens */
+    :root {
+      /* Populated from chosen visual direction */
+    }
+    
+    /* Reset and base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { 
+      height: 100%; 
+      overflow: hidden;
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text-primary);
+    }
+    
+    /* Slide system */
+    .deck {
+      height: 100vh;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+    }
+    
+    .slide {
+      height: 100vh;
+      width: 100vw;
+      scroll-snap-align: start;
+      display: grid;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    /* Layout variants */
+    .slide[data-layout="hero"] { place-items: center; text-align: center; }
+    .slide[data-layout="split"] { grid-template-columns: 1fr 1fr; }
+    .slide[data-layout="three-up"] { grid-template-rows: auto 1fr; }
+    /* etc */
   </style>
 </head>
 <body>
-  <div class="presentation">
-    <!-- Slide Pages -->
-  </div>
+  <main class="deck">
+    
+    <section class="slide" data-layout="hero" id="slide-1">
+      <div class="slide-content">
+        <!-- Content here -->
+      </div>
+    </section>
+    
+    <!-- More slides... -->
+    
+  </main>
+  
+  <!-- Navigation overlay -->
+  <nav class="deck-nav">
+    <span class="progress">1 / 10</span>
+  </nav>
+  
   <script>
-    /* JavaScript Interactions */
+    // Navigation logic
+    // Animation triggers
+    // Keyboard handling
   </script>
 </body>
 </html>
@@ -30,189 +84,207 @@ HTML template specifications for Mickinsey slides.
 
 ---
 
-## CSS Base Styles
+## CSS Architecture
+
+### Design Tokens
 
 ```css
-/* ===== Reset & Base ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
-}
-
-/* ===== Presentation Container ===== */
-.presentation {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-/* ===== Single Slide ===== */
-.slide {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: none;
-  padding: 60px 80px;
-  overflow: hidden;
-}
-
-.slide.active {
-  display: flex;
-  flex-direction: column;
-  animation: slideIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* ===== Animation Definitions ===== */
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ===== Content Components ===== */
-.slide-title {
-  font-size: 48px;
-  font-weight: 700;
-  margin-bottom: 40px;
-  line-height: 1.3;
-}
-
-.slide-subtitle {
-  font-size: 24px;
-  font-weight: 400;
-  opacity: 0.8;
-  margin-bottom: 20px;
-}
-
-.content-grid {
-  display: grid;
-  gap: 30px;
-  flex: 1;
-}
-
-.content-card {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  padding: 30px;
-  backdrop-filter: blur(10px);
-}
-
-/* ===== Navigation Controls ===== */
-.nav-hint {
-  position: fixed;
-  bottom: 20px;
-  right: 30px;
-  font-size: 14px;
-  opacity: 0.5;
-  z-index: 1000;
-}
-
-.page-number {
-  position: fixed;
-  bottom: 20px;
-  left: 30px;
-  font-size: 14px;
-  opacity: 0.5;
-  z-index: 1000;
-}
-
-/* ===== Print/PDF Export ===== */
-@media print {
-  .slide {
-    display: flex !important;
-    position: relative;
-    page-break-after: always;
-    break-after: page;
-  }
+:root {
+  /* Colors (from selected preset) */
+  --bg: #0a0a0a;
+  --surface: #141414;
+  --text-primary: #ffffff;
+  --text-secondary: #888888;
+  --accent: #ff3366;
   
-  .nav-hint, .page-number {
-    display: none;
+  /* Typography */
+  --font-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "SF Mono", Monaco, monospace;
+  
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 8rem;
+  
+  /* Motion */
+  --duration-fast: 0.3s;
+  --duration-normal: 0.6s;
+  --duration-slow: 1s;
+  --easing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+```
+
+### Slide Layouts
+
+```css
+/* Base slide */
+.slide {
+  padding: var(--space-lg);
+}
+
+/* Hero - centered, big type */
+.slide[data-layout="hero"] {
+  place-items: center;
+  text-align: center;
+}
+.slide[data-layout="hero"] h1 {
+  font-size: clamp(3rem, 8vw, 8rem);
+  line-height: 1;
+  font-weight: 800;
+}
+
+/* Split - two columns */
+.slide[data-layout="split"] {
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+}
+@media (max-width: 768px) {
+  .slide[data-layout="split"] {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
   }
+}
+
+/* Three-up - cards */
+.slide[data-layout="three-up"] {
+  grid-template-rows: auto 1fr;
+}
+.slide[data-layout="three-up"] .cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  align-items: start;
+}
+
+/* Quote - centered text */
+.slide[data-layout="quote"] {
+  place-items: center;
+  padding: var(--space-xl);
+}
+.slide[data-layout="quote"] blockquote {
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1.3;
+  font-weight: 300;
+}
+```
+
+### Animation System
+
+```css
+/* Entrance animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(40px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes scaleIn {
+  from { 
+    opacity: 0; 
+    transform: scale(0.9); 
+  }
+  to { 
+    opacity: 1; 
+    transform: scale(1); 
+  }
+}
+
+@keyframes clipReveal {
+  from { clip-path: inset(100% 0 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+
+/* Stagger utility */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+
+/* Play state controlled by JS */
+.animate {
+  animation-fill-mode: backwards;
+  animation-duration: var(--duration-normal);
+  animation-timing-function: var(--easing);
+}
+.animate.when-visible {
+  animation-play-state: paused;
+}
+.animate.is-visible {
+  animation-play-state: running;
 }
 ```
 
 ---
 
-## JavaScript Interactions
+## JavaScript Architecture
+
+### Core Module
 
 ```javascript
 (function() {
   'use strict';
   
-  // ===== Configuration =====
-  const config = {
-    animationDuration: 600,
-    autoPlay: false,
-    autoPlayInterval: 5000
-  };
-  
-  // ===== Get Elements =====
+  const deck = document.querySelector('.deck');
   const slides = document.querySelectorAll('.slide');
-  const totalSlides = slides.length;
+  const progress = document.querySelector('.progress');
+  
+  // Current slide tracking
   let currentSlide = 0;
+  const totalSlides = slides.length;
   
-  // ===== Navigation Functions =====
-  function goToSlide(index) {
-    if (index < 0 || index >= totalSlides) return;
-    
-    slides[currentSlide].classList.remove('active');
-    slides[index].classList.add('active');
-    currentSlide = index;
-    updatePageNumber();
-  }
-  
-  function nextSlide() {
-    goToSlide(currentSlide + 1);
-  }
-  
-  function prevSlide() {
-    goToSlide(currentSlide - 1);
-  }
-  
-  function updatePageNumber() {
-    const pageNum = document.querySelector('.page-number');
-    if (pageNum) {
-      pageNum.textContent = `${currentSlide + 1} / ${totalSlides}`;
+  // Update progress indicator
+  function updateProgress() {
+    if (progress) {
+      progress.textContent = `${currentSlide + 1} / ${totalSlides}`;
     }
   }
   
-  // ===== Keyboard Controls =====
+  // Intersection Observer for animations
+  const observerOptions = {
+    root: deck,
+    threshold: 0.5
+  };
+  
+  const slideObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        currentSlide = Array.from(slides).indexOf(entry.target);
+        updateProgress();
+      }
+    });
+  }, observerOptions);
+  
+  slides.forEach(slide => {
+    slide.classList.add('when-visible');
+    slideObserver.observe(slide);
+  });
+  
+  // Keyboard navigation
   document.addEventListener('keydown', (e) => {
     switch(e.key) {
-      case 'ArrowRight':
       case 'ArrowDown':
+      case 'ArrowRight':
       case ' ':
         e.preventDefault();
         nextSlide();
         break;
-      case 'ArrowLeft':
       case 'ArrowUp':
+      case 'ArrowLeft':
         e.preventDefault();
         prevSlide();
         break;
@@ -227,104 +299,128 @@ html, body {
     }
   });
   
-  // ===== Touch Swipe Support =====
+  function nextSlide() {
+    if (currentSlide < totalSlides - 1) {
+      slides[currentSlide + 1].scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+  
+  function prevSlide() {
+    if (currentSlide > 0) {
+      slides[currentSlide - 1].scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+  
+  function goToSlide(index) {
+    if (index >= 0 && index < totalSlides) {
+      slides[index].scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+  
+  // Touch/swipe support
   let touchStartY = 0;
-  let touchEndY = 0;
   
-  document.addEventListener('touchstart', (e) => {
-    touchStartY = e.changedTouches[0].screenY;
-  });
+  deck.addEventListener('touchstart', (e) => {
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
   
-  document.addEventListener('touchend', (e) => {
-    touchEndY = e.changedTouches[0].screenY;
-    handleSwipe();
-  });
-  
-  function handleSwipe() {
-    const threshold = 50;
+  deck.addEventListener('touchend', (e) => {
+    const touchEndY = e.changedTouches[0].clientY;
     const diff = touchStartY - touchEndY;
     
-    if (Math.abs(diff) > threshold) {
+    if (Math.abs(diff) > 50) {
       if (diff > 0) {
         nextSlide();
       } else {
         prevSlide();
       }
     }
-  }
+  }, { passive: true });
   
-  // ===== Initialization =====
-  function init() {
-    // Show first slide
-    if (slides.length > 0) {
-      slides[0].classList.add('active');
-      updatePageNumber();
-    }
-    
-    // Add navigation hint
-    const hint = document.createElement('div');
-    hint.className = 'nav-hint';
-    hint.textContent = '← → or Space to navigate';
-    document.body.appendChild(hint);
-    
-    const pageIndicator = document.createElement('div');
-    pageIndicator.className = 'page-number';
-    document.body.appendChild(pageIndicator);
-    updatePageNumber();
-  }
-  
-  // Start
-  init();
+  // Initialize
+  updateProgress();
   
 })();
 ```
 
 ---
 
-## Page Template Examples
+## Print/PDF Styles
 
-### Cover Slide
-
-```html
-<div class="slide cover">
-  <div class="cover-content">
-    <h1 class="slide-title">{{ title }}</h1>
-    <p class="slide-subtitle">{{ subtitle }}</p>
-    <div class="speaker-info">
-      <p>{{ speaker }}</p>
-      <p>{{ date }}</p>
-    </div>
-  </div>
-  <div class="cover-decoration"></div>
-</div>
+```css
+@media print {
+  @page {
+    size: 1920px 1080px;
+    margin: 0;
+  }
+  
+  html, body {
+    height: auto;
+    overflow: visible;
+  }
+  
+  .deck {
+    height: auto;
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+  
+  .slide {
+    page-break-after: always;
+    break-after: page;
+    height: 1080px;
+    width: 1920px;
+    display: grid !important;
+    opacity: 1 !important;
+  }
+  
+  .deck-nav,
+  .nav-hint {
+    display: none !important;
+  }
+  
+  /* Ensure animations are complete */
+  .animate {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
 ```
 
-### Content Slide
+---
+
+## Speaker Notes
+
+Optional hidden notes for presenters:
 
 ```html
-<div class="slide content">
-  <h2 class="slide-title">{{ page_title }}</h2>
-  <div class="content-grid">
-    <div class="content-card">
-      <h3>{{ item_title }}</h3>
-      <p>{{ item_content }}</p>
-    </div>
-    <!-- More cards... -->
+<section class="slide" data-layout="hero">
+  <div class="slide-content">
+    <h1>Title</h1>
   </div>
-</div>
+  <aside class="speaker-notes">
+    Don't forget to mention the Q3 numbers here.
+    Pause for dramatic effect after the reveal.
+  </aside>
+</section>
 ```
 
-### Data Slide
+```css
+.speaker-notes {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: rgba(0,0,0,0.8);
+  color: white;
+  font-size: 14px;
+}
 
-```html
-<div class="slide data">
-  <h2 class="slide-title">{{ data_title }}</h2>
-  <div class="data-grid">
-    <div class="data-item">
-      <span class="data-number">{{ number }}</span>
-      <span class="data-label">{{ label }}</span>
-    </div>
-    <!-- More data... -->
-  </div>
-</div>
+/* Show in presenter mode */
+body.presenter-mode .speaker-notes {
+  display: block;
+}
 ```
